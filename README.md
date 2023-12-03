@@ -12,3 +12,4 @@ npm i dotenv
 MVC (Model View Controller)
 ORM (object related modelling)
 ODM (Object datamodelling)
+Relational Database

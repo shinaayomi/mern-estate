@@ -3,3 +3,5 @@ export const test = (req, res) => {
     message: "User api route is working!!!",
   });
 };
+
+export const updateUser = (req, res, next) => {};

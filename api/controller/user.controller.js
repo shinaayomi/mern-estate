@@ -59,6 +59,6 @@ export const getUserListings = async (req, res, next) => {
       next(error);
     }
   } else {
-    next(errorHandler("You can onnly view your own listings!"));
+    next(errorHandler("You can only view your own listings!"));
   }
 };

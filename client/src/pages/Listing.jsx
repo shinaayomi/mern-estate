@@ -116,9 +116,9 @@ export default function Listing() {
                 {listing.furnished ? "Furnished" : "Unfurnished"}
               </li>
             </ul>
-            {/* {currentUser && currentUser._id !== listing.userRef && !contact && ( */}
-            <button onClick={() => setContact(true)} className="bg-slate-700 text-white rounded-lg uppercase hover:opacity-95 p-3">Contact Landlord</button>
-            {/* )} */}
+            {currentUser && currentUser._id !== listing.userRef && !contact && (
+              <button onClick={() => setContact(true)} className="bg-slate-700 text-white rounded-lg uppercase hover:opacity-95 p-3">Contact Landlord</button>
+            )}
             {contact && <Contact listing={listing} />}
           </div>
         </div>

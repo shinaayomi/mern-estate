@@ -6,14 +6,14 @@ import {
   getUserListings,
   getUser,
 } from "../controller/user.controller.js";
-import { verifyTokken } from "../utils/verifyUser.js";
+import { verifyToken } from "../utils/verifyUser.js";
 
 const router = express.Router();
 
 router.get("/test", test);
-router.patch("/update/:id", verifyTokken, updateUser);
-router.delete("/delete/:id", verifyTokken, deleteUser);
-router.get("/listings/:id", verifyTokken, getUserListings);
-router.get("/:id", verifyTokken, getUser);
+router.patch("/update/:id", verifyToken, updateUser);
+router.delete("/delete/:id", verifyToken, deleteUser);
+router.get("/listings/:id", verifyToken, getUserListings);
+router.get("/:id", verifyToken, getUser);
 
 export default router;

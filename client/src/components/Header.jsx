@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { use } from "react";
 import { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { useSelector } from "react-redux";

@@ -102,7 +102,7 @@ export const getListings = async (req, res, next) => {
       parking,
       type,
     })
-      .sort({ [sort]: order === "asc" ? 1 : -1 })
+      .sort({ [sort]: order })
       .limit(limit)
       .skip(startIndex);
 

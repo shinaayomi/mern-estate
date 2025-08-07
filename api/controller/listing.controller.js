@@ -3,6 +3,10 @@ import { errorHandler } from "../utils/error.js";
 
 export const createListing = async (req, res, next) => {
   try {
+    // const listing = await Listing.create({
+    //   ...req.body,
+    //   userRef: req.user.id, // inject the user ID here
+    // });
     const listing = await Listing.create(req.body);
     return res.status(201).json(listing);
   } catch (error) {

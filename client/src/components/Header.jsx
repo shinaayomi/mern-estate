@@ -62,7 +62,7 @@ export default function Header() {
             </li>
           </Link>
           <Link to="/profile">
-            {currentUser ? <img className="rounded-full w-7 h-7 object-cover" src={currentUser.avatar} alt="profile" loading="lazy" /> :
+            {currentUser ? <img className="rounded-full w-7 h-7 object-cover" src={currentUser.avatar || "https://static.vecteezy.com/system/resources/thumbnails/005/544/718/small_2x/profile-icon-design-free-vector.jpg"} alt="profile" loading="lazy" /> :
               <li className="text-slate-700 hover:underline">Sign in</li>}
           </Link>
         </ul>

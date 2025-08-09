@@ -1,6 +1,5 @@
 
 import {
-  deleteObject,
   getDownloadURL,
   getStorage,
   ref,
@@ -103,30 +102,41 @@ export default function UpdateListing() {
     });
   };
 
+  // const handleRemoveImage = async (index) => {
+  //   const imageUrl = formData.imageUrls[index];
+  //   try {
+  //     const storage = getStorage(app);
+
+  //     // Extract the path from the URL
+  //     // const decodedUrl = decodeURIComponent(imageUrl.split("?")[0]);
+  //     // const pathStart = decodedUrl.indexOf("/o/") + 3;
+  //     // const pathEnd = decodedUrl.length;
+  //     // const filePath = decodedUrl.substring(pathStart, pathEnd);
+
+  //     // Decode URL and extract the correct path
+  //     const decodedUrl = decodeURIComponent(imageUrl.split("?")[0]);
+  //     const filePath = decodedUrl.split("/o/")[1]; // everything after '/o/'
+
+  //     const imageRef = ref(storage, filePath);
+  //     await deleteObject(imageRef);
+
+  //     // Remove from formData
+  //     setFormData({
+  //       ...formData,
+  //       imageUrls: formData.imageUrls.filter((_, i) => i !== index),
+  //     });
+  //   } catch (error) {
+  //     console.error("Error deleting image from Firebase:", error);
+  //     setImageUploadError("Failed to delete image from storage");
+  //   }
+  // };
+
   const handleRemoveImage = async (index) => {
-    const imageUrl = formData.imageUrls[index];
-    try {
-      const storage = getStorage(app);
-
-      // Extract the path from the URL
-      const decodedUrl = decodeURIComponent(imageUrl.split("?")[0]);
-      const pathStart = decodedUrl.indexOf("/o/") + 3;
-      const pathEnd = decodedUrl.length;
-      const filePath = decodedUrl.substring(pathStart, pathEnd);
-
-      const imageRef = ref(storage, filePath);
-      await deleteObject(imageRef);
-
-      // Remove from formData
-      setFormData({
-        ...formData,
-        imageUrls: formData.imageUrls.filter((_, i) => i !== index),
-      });
-    } catch (error) {
-      console.error("Error deleting image from Firebase:", error);
-      setImageUploadError("Failed to delete image from storage");
-    }
-  };
+    setFormData({
+      ...formData,
+      imageUrls: formData.imageUrls.filter((_, i) => i !== index),
+    });
+  }
 
   const handleChange = (e) => {
     if (e.target.id === "sale" || e.target.id === "rent") {
